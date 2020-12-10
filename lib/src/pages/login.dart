@@ -2,12 +2,16 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:proyecto_software/src/styles/styles.dart';
 
 
 class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final styles = Styles();
+
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -19,7 +23,7 @@ class LoginPage extends StatelessWidget {
                 hasScrollBody: false,
                 child: Column(
                   children: [
-                    Datos(title: 'App Name'),
+                    Datos(title: styles.nameApp),
                     
                     _Button(mensaje: 'Dont have an account?', buttonName: 'Log In')
                   ],
@@ -37,6 +41,8 @@ class LoginPage extends StatelessWidget {
 
 class _Button extends StatelessWidget {
 
+  
+
   final String mensaje, buttonName;
   const _Button({
     @required this.mensaje, 
@@ -45,6 +51,9 @@ class _Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final styles = Styles();
+
     return Expanded(
       child: Container(
         margin: EdgeInsets.all(60),
@@ -58,7 +67,7 @@ class _Button extends StatelessWidget {
               child: Container(
                 height: 50,
                 decoration: BoxDecoration(
-                  color: Color(0xff343A40)
+                  color: styles.color
                 ),
                 child: Center(
                   child: Text(
@@ -101,6 +110,7 @@ class Datos extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final screen = MediaQuery.of(context).size;
+    final styles = Styles();
 
     return Container(
       width: double.infinity,
@@ -115,7 +125,7 @@ class Datos extends StatelessWidget {
               topRight: Radius.circular(50),
               bottomRight: Radius.circular(50)
             ),
-            color: Color(0xff343A40)
+            color: styles.color
           ),
           child: Container(
             margin: EdgeInsets.symmetric(horizontal: 50,vertical: 50),
