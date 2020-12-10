@@ -53,26 +53,34 @@ class _Button extends StatelessWidget {
 
             Spacer(),
 
-            Container(
-              height: 50,
-              decoration: BoxDecoration(
-                color: Color(0xff343A40)
-              ),
-              child: Center(
-                child: Text(
-                  this.buttonName,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 15
-                  ),  
+            GestureDetector(
+              onTap: () { print('login'); },
+              child: Container(
+                height: 50,
+                decoration: BoxDecoration(
+                  color: Color(0xff343A40)
+                ),
+                child: Center(
+                  child: Text(
+                    this.buttonName,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15
+                    ),  
+                  ),
                 ),
               ),
             ),
 
-            Container(
-              padding: EdgeInsets.symmetric(vertical: 10),
-              width: double.infinity,
-              child: Text(this.mensaje),
+            GestureDetector(
+              onTap: () {print('Contraseña olvidada');},
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  child: Text(this.mensaje),
+                ),
+              ),
             )
           ],
         ),
