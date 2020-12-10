@@ -23,7 +23,7 @@ class LoginPage extends StatelessWidget {
                 hasScrollBody: false,
                 child: Column(
                   children: [
-                    Datos(title: styles.nameApp),
+                    _Datos(title: styles.nameApp),
                     
                     _Button(mensaje: 'Dont have an account?', buttonName: 'Log In')
                   ],
@@ -98,11 +98,11 @@ class _Button extends StatelessWidget {
   }
 }
 
-class Datos extends StatelessWidget {
+class _Datos extends StatelessWidget {
 
   final String title;
 
-  const Datos({
+  const _Datos({
     @required this.title
   });
 
@@ -112,55 +112,51 @@ class Datos extends StatelessWidget {
     final screen = MediaQuery.of(context).size;
     final styles = Styles();
 
-    return Container(
-      width: double.infinity,
-      height: screen.height * 0.7,
-      child: Align(
-        alignment: Alignment.centerLeft,
-        child: Container(
-          height: screen.width,
-          width: screen.width * 0.9,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-              topRight: Radius.circular(50),
-              bottomRight: Radius.circular(50)
-            ),
-            color: styles.color
+    return Align(
+      alignment: Alignment.topLeft,
+      child: Container(
+        width: screen.width * 0.9,
+        margin: EdgeInsets.symmetric(vertical: 70),
+        decoration: BoxDecoration(
+          color: styles.color,
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(50),
+            bottomRight: Radius.circular(50)
           ),
-          child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 50,vertical: 50),
-            child: Column(
-              children: [
-                
-                _title(this.title),
+        ),
+        child: Container(
+          margin: EdgeInsets.symmetric(horizontal: 50,vertical: 50),
+          child: Column(
+            children: [
 
+              _title(this.title),
 
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.symmetric(vertical: 20,horizontal: 15),
-                    child: Column(
-                      children: [
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 20,horizontal: 15),
+                child: Column(
+                  children: [
 
-                        _InputText(
-                          description: 'Nombre de Usuario',
-                        ),
-     
-                        _InputText(
-                          description: 'Contraseña', 
-                          password: true,
-                        ),
-     
-                      ],
-                    )
-                  ),
+                    _InputText(
+                      description: 'Nombre de Usuario',
+                    ),
+    
+                    _InputText(
+                      description: 'Contraseña', 
+                      password: true,
+                    ),
+    
+                  ],
                 )
+              )
 
-              ],
-            ),
+
+
+            ],
           ),
         ),
       ),
-    );
+    ); 
+    
   }
 
   Container _title( String title ) {
