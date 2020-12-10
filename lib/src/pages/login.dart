@@ -118,7 +118,7 @@ class Datos extends StatelessWidget {
       child: Align(
         alignment: Alignment.centerLeft,
         child: Container(
-          height: screen.width * 0.9,
+          height: screen.width,
           width: screen.width * 0.9,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
@@ -217,4 +217,3 @@ class _InputText extends StatelessWidget {
     );
   }
 }
-
