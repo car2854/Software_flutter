@@ -9,17 +9,28 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-
-          Datos(
-            title: 'App Name',
+      body: SafeArea(
+        child: Container(
+          height: double.infinity,
+          width: double.infinity,
+          child: CustomScrollView(
+            slivers: [
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Column(
+                  children: [
+                    Datos(title: 'App Name'),
+                    
+                    _Button(mensaje: 'Dont have an account?', buttonName: 'Log In')
+                  ],
+                ),
+              )
+            ],
+            
           ),
-
-          _Button(mensaje: 'Dont have an account?',buttonName: 'Log In',)
-
-        ],
-      )
+        ),
+      ),
+      
     );
   }
 }
