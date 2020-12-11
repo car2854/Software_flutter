@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_software/src/pages/login.dart';
- 
+import 'package:proyecto_software/src/export/routes.dart';
+
 void main() => runApp(MyApp());
  
 class MyApp extends StatelessWidget {
@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
       initialRoute: 'login',
       routes: {
 
-        'login'     : ( BuildContext context ) => LoginPage(),
+        'login'       : ( BuildContext context ) => LoginPage(),
+        'camera'      : ( BuildContext context ) => CameraPage(),
 
       },
     );

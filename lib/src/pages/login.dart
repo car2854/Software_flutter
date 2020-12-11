@@ -42,7 +42,6 @@ class LoginPage extends StatelessWidget {
 class _Button extends StatelessWidget {
 
   
-
   final String mensaje, buttonName;
   const _Button({
     @required this.mensaje, 
@@ -63,7 +62,7 @@ class _Button extends StatelessWidget {
             Spacer(),
 
             GestureDetector(
-              onTap: () { print('login'); },
+              onTap: () { Navigator.pushReplacementNamed(context, 'camera'); },
               child: Container(
                 height: 50,
                 decoration: BoxDecoration(
