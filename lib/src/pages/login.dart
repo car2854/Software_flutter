@@ -72,7 +72,7 @@ class _Button extends StatelessWidget {
                   child: Text(
                     this.buttonName,
                     style: TextStyle(
-                      color: Colors.white,
+                      color: styles.styleColorTheme,
                       fontSize: 15
                     ),  
                   ),
@@ -160,6 +160,8 @@ class _Datos extends StatelessWidget {
 
   Container _title( String title ) {
 
+    final styles = Styles();
+
     return Container(
       width: double.infinity,
       child: Center(
@@ -167,7 +169,7 @@ class _Datos extends StatelessWidget {
           title.toUpperCase(),
           style: TextStyle(
             fontSize: 36,
-            color: Colors.white
+            color: styles.styleColorTheme
           ),
         )
       ),
@@ -187,22 +189,23 @@ class _InputText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final styles = Styles();
     return Container(
-
+      
       padding: EdgeInsets.symmetric(vertical: 10),
 
       child: TextFormField(
         decoration: InputDecoration(
           labelText: this.description,
           labelStyle: TextStyle(
-            color: Colors.white,
+            color: styles.styleColorTheme,
           ),
           enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.white)
+            borderSide: BorderSide(color: styles.styleColorTheme)
           )
         ),
         style: TextStyle(
-          color: Colors.white
+          color: styles.styleColorTheme
         ),
         
 

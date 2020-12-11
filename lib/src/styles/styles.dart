@@ -8,4 +8,7 @@ class Styles {
   // Color del tema
   final Color color = Color(0xff343A40);
 
+  // Color de letras dentro del tema
+  final Color styleColorTheme = Color(0xffFFFFFF);
+
 }

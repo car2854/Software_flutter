@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 // import 'package:camera/camera.dart';
 import 'package:proyecto_software/src/styles/styles.dart';
@@ -11,15 +13,22 @@ class CameraPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('User Name'),
+        title: Text(
+          'User Name',
+          style: TextStyle(
+            color: styles.styleColorTheme
+          ),
+        ),
         backgroundColor: styles.color,
         actions: [
           IconButton(
             icon: Icon(Icons.play_arrow), 
+            color: styles.styleColorTheme,
             onPressed: () {}
           ),
           IconButton(
-            icon: Icon(Icons.exit_to_app), 
+            icon: Icon(Icons.exit_to_app),
+            color: styles.styleColorTheme,
             onPressed: () {
               Navigator.pushReplacementNamed(context, 'login');
             }
